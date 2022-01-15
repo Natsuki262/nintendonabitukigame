@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField]
     float speed=1f;
     Vector3 pos;
     void Start()
@@ -21,11 +22,13 @@ public class PlayerMove : MonoBehaviour
 
         if(Input.GetKey("a"))
         {
-            transform.position += transform.right * speed * Time.deltaTime;
+            transform.rotation = Quaternion.Euler(0, 90, 0);//‰ñ“]
+            transform.position+=transform.forward*speed;
         }
         if (Input.GetKey("d"))
         {
-            transform.position-=transform.right * speed * Time.deltaTime;   
+            transform.rotation = Quaternion.Euler(0, -90, 0);//‰ñ“]
+            transform.position += transform.forward * speed;
         }
 
 
