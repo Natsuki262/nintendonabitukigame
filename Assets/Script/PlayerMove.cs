@@ -22,25 +22,26 @@ public class PlayerMove : MonoBehaviour
         var forece = new Vector3(rl, 0f, 0f);
         GetComponent<Rigidbody>().AddForce(forece * 2000);*/
 
-        /*if(Input.GetKey("a"))
+        if(Input.GetKey("a"))
         {
             transform.rotation = Quaternion.Euler(0, 90, 0);//âÒì]
-            transform.position+=transform.forward*speed*Time.deltaTime;
+            transform.Translate(speed*Time.deltaTime, 0, 0,Space.World);//worldç¿ïWånÇ≈à⁄ìÆ
         }
         if (Input.GetKey("d"))
         {
             transform.rotation = Quaternion.Euler(0, -90, 0);//âÒì]
-            transform.position += transform.forward * speed;
-        }*/
+            transform.Translate(-speed * Time.deltaTime, 0, 0, Space.World);//worldç¿ïWånÇ≈à⁄ìÆ
+
+        }
         
 
 
     }
-    void FixedUpdate()
+    /*void FixedUpdate()
     {
-        float x = Input.GetAxis("Horizotal");
         transform.rotation = Quaternion.Euler(0, 90, 0);
-        rb.AddForce(x, 0, 0);
-    }
+        float x = Input.GetAxis("Horizontal");
+        rb.AddForce(speed, 0, 0);
+    }*/
 
 }
