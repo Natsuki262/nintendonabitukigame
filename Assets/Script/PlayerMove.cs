@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    float speed=1f;
+    float speed = 1f;
     Vector3 pos;
     Rigidbody rb;
 
@@ -21,7 +21,7 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         pos = transform.position;
-        rb=GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -31,10 +31,10 @@ public class PlayerMove : MonoBehaviour
         var forece = new Vector3(rl, 0f, 0f);
         GetComponent<Rigidbody>().AddForce(forece * 2000);*/
 
-        if(Input.GetKey("a"))
+        if (Input.GetKey("a"))
         {
             transform.rotation = Quaternion.Euler(0, 90, 0);//âÒì]
-            transform.Translate(speed*Time.deltaTime, 0, 0,Space.World);//worldç¿ïWånÇ≈à⁄ìÆ
+            transform.Translate(speed * Time.deltaTime, 0, 0, Space.World);//worldç¿ïWånÇ≈à⁄ìÆ
         }
         if (Input.GetKey("d"))
         {
@@ -42,23 +42,24 @@ public class PlayerMove : MonoBehaviour
             transform.Translate(-speed * Time.deltaTime, 0, 0, Space.World);//worldç¿ïWånÇ≈à⁄ìÆ
 
         }
-        if (Input.GetKey(KeyCode.Space)
+        if (Input.GetKey(KeyCode.Space))
         {
-            Junp=true
+            Junp = true;
         }
-        
+        else
+        {
+            Junp = false;
+        }
 
+
+
+    }
+    void FixedUpdate()
+    {
 
     }
     private void OnCollisionEnter(Collision collision)
     {
-        
-    }
-    /*void FixedUpdate()
-    {
-        transform.rotation = Quaternion.Euler(0, 90, 0);
-        float x = Input.GetAxis("Horizontal");
-        rb.AddForce(speed, 0, 0);
-    }*/
 
+    }
 }
