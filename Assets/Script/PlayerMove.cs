@@ -8,7 +8,16 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     float speed=1f;
     Vector3 pos;
-    public Rigidbody rb;
+    Rigidbody rb;
+
+    Status playerStatus = Status.GROUND;
+    [SerializeField]
+    float junpFirstSpeed;
+    [SerializeField]
+    float gravity;
+
+    float timer = 0f;
+    bool Junp = false;
     void Start()
     {
         pos = transform.position;
@@ -33,9 +42,17 @@ public class PlayerMove : MonoBehaviour
             transform.Translate(-speed * Time.deltaTime, 0, 0, Space.World);//worldç¿ïWånÇ≈à⁄ìÆ
 
         }
+        if (Input.GetKey(KeyCode.Space)
+        {
+            Junp=true
+        }
         
 
 
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        
     }
     /*void FixedUpdate()
     {
