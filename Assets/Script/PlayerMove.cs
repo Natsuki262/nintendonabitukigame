@@ -44,7 +44,9 @@ public class PlayerMove : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space))
         {
+            Debug.Log("hit");
             Junp = true;
+            Debug.Log(Junp);
         }
         else
         {
@@ -54,12 +56,55 @@ public class PlayerMove : MonoBehaviour
 
 
     }
-    void FixedUpdate()
+
+    public void FixedUpdate()
     {
 
+        Vector3 newVec = Vector3.zero;
+
+        switch (playerStatus)
+        {
+            //ê⁄ínéû
+            case Status.GROUND:
+                if (Junp)
+                {
+                    playerStatus = Status.UP;
+                    Debug.Log(playerStatus);
+                }
+                break;
+            //è„è∏
+            case Status.UP:
+                timer += Time.deltaTime;//éûä‘åvë™
+                if (Junp && rb.velocity.y >= 0f)
+                {
+                    newVec.y = junpFirstSpeed;
+                    newVec.y -= (gravity * timer);
+
+                }
+                else
+                {
+                    playerStatus=Status.DOWN;
+                    timer = 0f;
+                }
+                break;
+            case Status.DOWN:
+                timer += Time.deltaTime;
+
+                newVec.y = 0f;
+                newVec.y=-(gravity * timer);
+                break;
+            default:
+                break;
+        }
+        rb.velocity = newVec;   
     }
+    //ê⁄ínÇ©Ç«Ç§Ç©
     private void OnCollisionEnter(Collision collision)
     {
-
+        if (playerStatus==Status.DOWN&&collision.gameObject.name.Contains("Ground"))
+        {
+            playerStatus = Status.GROUND;
+            timer = 0f;
+        }
     }
 }
