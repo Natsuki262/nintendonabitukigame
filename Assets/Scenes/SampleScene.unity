@@ -932,8 +932,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  junpFirstSpeed: 100
-  gravity: 30
+  junpFirstSpeed: 20
+  gravity: 9.81
 --- !u!136 &1121724783
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -945,9 +945,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.35082322
-  m_Height: 1.2492546
+  m_Height: 1.3186282
   m_Direction: 1
-  m_Center: {x: 0.00813179, y: 0.6246273, z: -0.08113747}
+  m_Center: {x: 0.00813179, y: 0.58994055, z: -0.08113747}
 --- !u!54 &1121724786
 Rigidbody:
   m_ObjectHideFlags: 0
