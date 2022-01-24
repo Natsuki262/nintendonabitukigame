@@ -20,6 +20,7 @@ public class PlayerMove : MonoBehaviour
     bool Junp = false;
     void Start()
     {
+        Debug.Log(playerStatus);    
         pos = transform.position;
         rb = GetComponent<Rigidbody>();
     }
