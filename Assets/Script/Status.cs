@@ -4,7 +4,7 @@ using UnityEngine;
 
 enum Status
 {
-    GROUND=1,
-    UP=2,
-    DOWN=3, 
+    Ground=1,
+    Junp=2,
+    
 }
