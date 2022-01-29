@@ -6,6 +6,9 @@ public class Generator : MonoBehaviour
 {
     [SerializeField]
     GameObject gimickObject;
+
+    [SerializeField]
+    float waitTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +18,14 @@ public class Generator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GimmickGenerator();
+        StartCoroutine("waitGeneretor");
     }
-    void GimmickGenerator()
+    
+    IEnumerable waitGeneretor()
     {
-        Instantiate(gimickObject);
+        {
+            Instantiate(gimickObject);
+            yield return new WaitForSeconds(waitTime);
+        }
     }
 }
