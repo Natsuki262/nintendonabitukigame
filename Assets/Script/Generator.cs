@@ -18,13 +18,16 @@ public class Generator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine("waitGeneretor");
+        StartCoroutine((IEnumerator)waitGeneretor());
     }
-    
+    void GimmickGenerator()
+    {
+        Instantiate(gimickObject);
+    }
     IEnumerable waitGeneretor()
     {
         {
-            Instantiate(gimickObject);
+            GimmickGenerator();
             yield return new WaitForSeconds(waitTime);
         }
     }
