@@ -988,13 +988,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019870502}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14347e2e730dde14b987ad11f615c13b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gimickObject: {fileID: 5428526409111733438, guid: 0a7a164290d62584e995a79234aa99e8, type: 3}
-  waitTime: 15
+  waitTime: 150
 --- !u!4 &1019870504
 Transform:
   m_ObjectHideFlags: 0
