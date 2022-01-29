@@ -24,7 +24,7 @@ public class Generator : MonoBehaviour
     {
         Instantiate(gimickObject);
     }
-    IEnumerable waitGeneretor()
+    IEnumerator waitGeneretor()
     {
         {
             GimmickGenerator();

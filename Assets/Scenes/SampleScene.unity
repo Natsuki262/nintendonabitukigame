@@ -804,6 +804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gimickObject: {fileID: 5428526409111733438, guid: 0a7a164290d62584e995a79234aa99e8, type: 3}
+  waitTime: 15
 --- !u!4 &1019870504
 Transform:
   m_ObjectHideFlags: 0
