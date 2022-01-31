@@ -12,13 +12,13 @@ public class Generator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        StartCoroutine(WaitGeneretor());
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(WaitGeneretor());
     }
     void GimmickGenerator()
     {
