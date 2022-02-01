@@ -26,9 +26,9 @@ public class SphereGenerator : MonoBehaviour
     {
 
      GameObject go=Instantiate(spherPrefab, transform.position, transform.rotation);
-        go.GetComponent<testdie>().SetFunctionDead(Respwan);
+        go.GetComponent<BaceGimick>().SetFunctionDead(Respwan);
       
-        //生成した球をメンバ変数に保存
+        //生成した球をベースクラスにアクセスしてメンバ変数に保存
     }
   
     void Respwan()

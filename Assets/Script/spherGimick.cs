@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class testdie :BaceGimick
+public class spherGimick : BaceGimick
 {
     // Start is called before the first frame update
-
-    /// <summary>–{’I‚Ì‚æ‚¤‚È‚à‚Ì</summary>
-    
-   
-
     void Start()
     {
-        StartCoroutine(Wait());
+        
     }
 
     // Update is called once per frame
@@ -20,10 +15,11 @@ public class testdie :BaceGimick
     {
         
     }
-    IEnumerator Wait()
+    private void OnCollisionEnter(Collision collision)
     {
-        yield return new WaitForSeconds(5);
-       Die();
+        if (collision.gameObject.tag == "Gimck") 
+        {
+          Die();
+        }
     }
-    
 }
