@@ -8,6 +8,8 @@ public class SphereGenerator : MonoBehaviour
     [SerializeField]
     GameObject spherPrefab;//球のプレハブ
     GameObject instantiatedSpher;
+    
+    public delegate void FunctionDead();//死んだときに呼びだされる関数のデリゲート
     void Start()
     {
         SpherInstantiate();
@@ -16,9 +18,8 @@ public class SphereGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
 
-        IsDied();
+       
     }
     void SpherInstantiate()
     {
@@ -26,15 +27,10 @@ public class SphereGenerator : MonoBehaviour
         instantiatedSpher = Instantiate(spherPrefab, transform.position, transform.rotation);
         //生成した球をメンバ変数に保存
     }
-    bool IsDied()
+  
+    void Respwan()
     {
-
-        if (instantiatedSpher == null)
-        {
-            return true;
-
-        }
-        return false;
+       
     }
 
 }
