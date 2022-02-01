@@ -7,9 +7,10 @@ public class SphereGenerator : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     GameObject spherPrefab;//球のプレハブ
-    GameObject instantiatedSpher;
+  
     
     public delegate void FunctionDead();//死んだときに呼びだされる関数のデリゲート
+
     void Start()
     {
         SpherInstantiate();
@@ -24,13 +25,15 @@ public class SphereGenerator : MonoBehaviour
     void SpherInstantiate()
     {
 
-        instantiatedSpher = Instantiate(spherPrefab, transform.position, transform.rotation);
+     GameObject go=Instantiate(spherPrefab, transform.position, transform.rotation);
+        go.GetComponent<testdie>().SetFunctionDead(Respwan);
+      
         //生成した球をメンバ変数に保存
     }
   
     void Respwan()
     {
-       
+        SpherInstantiate();
     }
 
 }
