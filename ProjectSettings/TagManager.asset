@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - Gimck
+  - Enemy
+  - Survivor
+  - Chaser
   layers:
   - Default
   - TransparentFX

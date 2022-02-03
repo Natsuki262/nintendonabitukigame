@@ -10,7 +10,7 @@ public class PlayerBase : MonoBehaviour
 
     Rigidbody rb;
 
-    Status playerStatus = Status.Ground;
+   protected Status playerStatus = Status.Ground;
     [SerializeField]
     float junpSpeed;
 
