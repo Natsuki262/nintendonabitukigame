@@ -55,10 +55,23 @@ public class PlayerMove : MonoBehaviour
 
 
     //ê⁄ínÇ©Ç«Ç§Ç©
-    private void OnCollisionEnter(Collision collision)
+    void OnGroundEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ground")
             playerStatus = Status.Ground;
         Debug.Log("collisionenter");
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        OnGroundEnter(collision);
+        OnGimickEnter(collision);
+    }
+   void OnGimickEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Gimck")
+        {
+            Destroy(this.gameObject);
+        }
+    }
+   
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerJudgeBace : MonoBehaviour
+public class GsmeManeger : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,12 +14,5 @@ public class PlayerJudgeBace : MonoBehaviour
     void Update()
     {
         
-    }
-    protected void OnCollisionEnter(Collision collision)
-    {
-            if(collision.gameObject.tag=="Gimck")
-        {
-            Destroy(this.gameObject);
-        }
     }
 }
