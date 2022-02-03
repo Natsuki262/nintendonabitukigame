@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerBase : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
@@ -23,11 +23,12 @@ public class PlayerMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+   
+    public virtual void Update()
     {
 
 
-        if (Input.GetKey("a"))
+        if (Input.GetKey(KeyCode.A))
         {
             transform.rotation = Quaternion.Euler(0, 90, 0);//âÒì]
             transform.Translate(speed * Time.deltaTime, 0, 0, Space.World);//worldç¿ïWånÇ≈à⁄ìÆ
