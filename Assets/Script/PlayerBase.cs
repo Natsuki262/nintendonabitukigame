@@ -30,33 +30,41 @@ public class PlayerBase : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.rotation = Quaternion.Euler(0, 90, 0);//‰ñ“]
-            transform.Translate(speed * Time.deltaTime, 0, 0, Space.World);//worldÀ•WŒn‚ÅˆÚ“®
+           
         }
         if (Input.GetKey("d"))
         {
-            transform.rotation = Quaternion.Euler(0, -90, 0);//‰ñ“]
-            transform.Translate(-speed * Time.deltaTime, 0, 0, Space.World);//worldÀ•WŒn‚ÅˆÚ“®
+            
 
         }
 
 
         if (Input.GetKeyDown(KeyCode.Space) && playerStatus == Status.Ground)
         {
-            Junp();
+           
         }
 
     }
-    private void Junp()
+    protected void Junp()
     {
         rb.AddForce(Vector3.up * junpSpeed,ForceMode.VelocityChange);
         playerStatus = Status.Junp;
         Debug.Log(playerStatus);
     }
+    protected void MoveR()
+    {
+        transform.rotation = Quaternion.Euler(0, 90, 0);//‰ñ“]
+        transform.Translate(speed * Time.deltaTime, 0, 0, Space.World);//worldÀ•WŒn‚ÅˆÚ“®
+    }
+    protected void MoveL()
+    {
+        transform.rotation = Quaternion.Euler(0, -90, 0);//‰ñ“]
+        transform.Translate(-speed * Time.deltaTime, 0, 0, Space.World);//worldÀ•WŒn‚ÅˆÚ“®
+    }
 
 
     //Ú’n‚©‚Ç‚¤‚©
-    void OnGroundEnter(Collision collision)
+   private void OnGroundEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ground")
             playerStatus = Status.Ground;
@@ -66,13 +74,22 @@ public class PlayerBase : MonoBehaviour
     {
         OnGroundEnter(collision);
         OnGimickEnter(collision);
+        OnChaserEnter(collision);
     }
-   void OnGimickEnter(Collision collision)
+  private void OnGimickEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Gimck")
         {
             Destroy(this.gameObject);
         }
     }
+    private void OnChaserEnter(Collision collision)
+    {
+        if(collision.gameObject.tag== "Chaser")
+        {
+            Destroy(gameObject);
+        }
+    }
+        
    
 }
