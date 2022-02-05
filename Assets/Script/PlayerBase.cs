@@ -14,6 +14,8 @@ public class PlayerBase : MonoBehaviour
     [SerializeField]
     float junpSpeed;
 
+    public GameObject risultGameobj;
+
 
     void Start()
     {
@@ -80,6 +82,8 @@ public class PlayerBase : MonoBehaviour
     {
         if (collision.gameObject.tag == "Gimck")
         {
+             risultGameobj = collision.gameObject;
+            Debug.Log(risultGameobj);
             Destroy(this.gameObject);
         }
     }
@@ -87,6 +91,7 @@ public class PlayerBase : MonoBehaviour
     {
         if(collision.gameObject.tag== "Chaser")
         {
+           
             Destroy(gameObject);
         }
     }
