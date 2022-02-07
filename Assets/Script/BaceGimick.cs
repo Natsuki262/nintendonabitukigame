@@ -29,5 +29,8 @@ public class BaceGimick : MonoBehaviour
     {
         m_functionDead();//デリゲートで受けっとった関数を実行するつまり、送り先からきた関数の情報を呼び出す
         Destroy(gameObject);
+
+        //この関数呼び出してね
+        //鬼が村人に当たったらの処理スクリプトベースで残す　自分が思う方法でデリゲートなどをかみしないで書く。
     }
 }

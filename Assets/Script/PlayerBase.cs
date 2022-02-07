@@ -16,6 +16,7 @@ public class PlayerBase : MonoBehaviour
 
     public GameObject risultGameobj;
 
+    public delegate void FunctionRisult();
 
     void Start()
     {
@@ -70,7 +71,7 @@ public class PlayerBase : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
             playerStatus = Status.Ground;
-        Debug.Log("collisionenter");
+        //Debug.Log("collisionenter");
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -82,8 +83,8 @@ public class PlayerBase : MonoBehaviour
     {
         if (collision.gameObject.tag == "Gimck")
         {
-             risultGameobj = collision.gameObject;
-            Debug.Log(risultGameobj);
+             //risultGameobj = collision.gameObject;
+            //Debug.Log(risultGameobj);
             Destroy(this.gameObject);
         }
     }
